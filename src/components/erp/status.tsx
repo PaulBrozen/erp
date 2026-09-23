@@ -105,7 +105,7 @@ export function Kpi({
     <div className="frost rounded-xl p-4 ring-1 ring-foreground/10">
       <div className="flex items-center justify-between">
         <span className="text-[11px] uppercase tracking-[0.14em] text-muted">{label}</span>
-        <span className={`font-mono text-[10px] ${`text-${deltaTone}`}`}>{delta}</span>
+        <span className={`font-mono text-[10px] ${textTone[deltaTone]}`}>{delta}</span>
       </div>
       <div className="num mt-2 text-2xl font-semibold tracking-tight">{value}</div>
       <div className="mt-1 text-[11px] text-muted">{caption}</div>
