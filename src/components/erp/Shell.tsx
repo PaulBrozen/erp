@@ -29,7 +29,7 @@ function Nav() {
   return (
     <nav className="flex-1 space-y-0.5 px-3 py-4 text-sm">
       {modules.map((group) => (
-        <div key={group.group}>
+        <div key={group.group} className="pb-3">
           <div className="px-2 pb-1 text-[10px] uppercase tracking-[0.18em] text-muted">
             {group.group}
           </div>
