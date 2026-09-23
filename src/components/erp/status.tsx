@@ -11,6 +11,15 @@ const toneClass: Record<Tone, string> = {
   neutral: "bg-foreground/5 text-muted ring-foreground/10",
 };
 
+const textTone: Record<Tone, string> = {
+  accent: "text-accent",
+  info: "text-info",
+  warn: "text-warn",
+  crit: "text-crit",
+  ok: "text-ok",
+  neutral: "text-muted",
+};
+
 const dotClass: Record<Tone, string> = {
   accent: "bg-accent",
   info: "bg-info",
