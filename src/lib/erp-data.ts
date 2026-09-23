@@ -347,3 +347,64 @@ export function stockLevel(item: InventoryItem): {
   if (item.onHand < item.reorderPoint) return { pct, label: "Low stock" };
   return { pct, label: "In stock" };
 }
+
+export interface ProductionRun {
+  id: string;
+  sku: string;
+  description: string;
+  line: string;
+  plannedQty: number;
+  completedQty: number;
+  due: string;
+  status: "Queued" | "Running" | "Complete" | "Blocked";
+}
+
+export interface Customer {
+  id: string;
+  name: string;
+  segment: string;
+  region: string;
+  openOrders: number;
+  balance: number;
+  currency: "USD" | "EUR" | "GBP" | "JPY";
+  status: "Active" | "On hold" | "Prospect";
+}
+
+export interface Supplier {
+  id: string;
+  name: string;
+  category: string;
+  region: string;
+  openPos: number;
+  leadTimeDays: number;
+  onTimePct: number;
+  status: "Approved" | "Review" | "Suspended";
+}
+
+export const productionRuns: ProductionRun[] = [
+  { id: "WO-3301", sku: "HX-4471", description: "Aluminum housing, 40mm", line: "Line A · West", plannedQty: 1200, completedQty: 1200, due: "2025-09-15", status: "Complete" },
+  { id: "WO-3302", sku: "AV-7712", description: "Glass bottle, 750ml", line: "Line B · West", plannedQty: 4000, completedQty: 2450, due: "2025-09-24", status: "Running" },
+  { id: "WO-3303", sku: "PN-5540", description: "Steel bracket, L-type", line: "Line C · Central", plannedQty: 900, completedQty: 0, due: "2025-09-29", status: "Queued" },
+  { id: "WO-3304", sku: "MD-9023", description: "Sealed pail, 20L", line: "Line D · East", plannedQty: 600, completedQty: 130, due: "2025-09-20", status: "Blocked" },
+  { id: "WO-3305", sku: "BW-6604", description: "Blister foil, 120mic", line: "Line E · East", plannedQty: 8000, completedQty: 5600, due: "2025-09-27", status: "Running" },
+  { id: "WO-3306", sku: "OR-2290", description: "Precision lens, 18mm", line: "Line A · West", plannedQty: 350, completedQty: 0, due: "2025-10-03", status: "Queued" },
+];
+
+export const customers: Customer[] = [
+  { id: "CU-1042", name: "Halcyon Retail", segment: "Retail", region: "North", openOrders: 3, balance: 18420, currency: "USD", status: "Active" },
+  { id: "CU-1043", name: "Northgate Supply", segment: "Wholesale", region: "EU", openOrders: 2, balance: 9760, currency: "EUR", status: "Active" },
+  { id: "CU-1044", name: "Meridian Foods", segment: "Food & Bev", region: "UK", openOrders: 1, balance: 0, currency: "GBP", status: "Active" },
+  { id: "CU-1045", name: "Cobalt Logistics", segment: "Logistics", region: "APAC", openOrders: 4, balance: 1204500, currency: "JPY", status: "On hold" },
+  { id: "CU-1046", name: "Aster & Vine", segment: "Retail", region: "North", openOrders: 2, balance: 22980, currency: "USD", status: "Active" },
+  { id: "CU-1047", name: "Pinnacle Co.", segment: "Industrial", region: "EU", openOrders: 1, balance: 11300, currency: "EUR", status: "Prospect" },
+  { id: "CU-1048", name: "Brightwell Pharma", segment: "Pharma", region: "UK", openOrders: 3, balance: 47250, currency: "GBP", status: "Active" },
+];
+
+export const suppliers: Supplier[] = [
+  { id: "SU-2201", name: "Kestrel Metals", category: "Metals", region: "North", openPos: 2, leadTimeDays: 14, onTimePct: 96, status: "Approved" },
+  { id: "SU-2202", name: "Lindholm Packaging", category: "Packaging", region: "EU", openPos: 3, leadTimeDays: 9, onTimePct: 88, status: "Approved" },
+  { id: "SU-2203", name: "Dunmore Plastics", category: "Plastics", region: "UK", openPos: 1, leadTimeDays: 21, onTimePct: 62, status: "Review" },
+  { id: "SU-2204", name: "Tanaka Fixings", category: "Fixings", region: "APAC", openPos: 2, leadTimeDays: 28, onTimePct: 91, status: "Approved" },
+  { id: "SU-2205", name: "Orrery Optics", category: "Optics", region: "North", openPos: 1, leadTimeDays: 18, onTimePct: 74, status: "Review" },
+  { id: "SU-2206", name: "Verdi Solvents", category: "Chemicals", region: "EU", openPos: 0, leadTimeDays: 12, onTimePct: 41, status: "Suspended" },
+];
