@@ -45,6 +45,16 @@ export const statusTone: Record<string, Tone> = {
   "In stock": "ok",
   "Low stock": "warn",
   Critical: "crit",
+  Queued: "neutral",
+  Running: "warn",
+  Complete: "ok",
+  Blocked: "crit",
+  Active: "ok",
+  "On hold": "warn",
+  Prospect: "info",
+  Approved: "ok",
+  Review: "warn",
+  Suspended: "crit",
 };
 
 export function StatusChip({ status }: { status: string }) {

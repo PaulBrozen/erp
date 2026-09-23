@@ -3,14 +3,23 @@ import type { ReactNode } from "react";
 
 const modules = [
   {
+    group: "Overview",
+    items: [{ to: "/", label: "Dashboard", count: "01" }],
+  },
+  {
     group: "Operations",
     items: [
-      { to: "/", label: "Dashboard", count: "01" },
-      { to: "/orders", label: "Sales Orders", count: "128" },
+      { to: "/purchasing", label: "Purchases", count: "31" },
       { to: "/inventory", label: "Inventory", count: "44" },
-      { to: "/purchasing", label: "Purchasing", count: "31" },
-      { to: "/receivables", label: "Receivables", count: "19" },
+      { to: "/production", label: "Production", count: "06" },
+      { to: "/orders", label: "Sales", count: "128" },
+      { to: "/customers", label: "Customers", count: "07" },
+      { to: "/suppliers", label: "Suppliers", count: "06" },
     ],
+  },
+  {
+    group: "Finance",
+    items: [{ to: "/receivables", label: "Receivables", count: "19" }],
   },
 ] as const;
 
