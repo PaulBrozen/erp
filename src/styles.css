@@ -67,7 +67,7 @@
 }
 
 @utility frost {
-  background: color-mix(in oklab, white 3.5%, transparent);
+  background: color-mix(in oklab, white 7%, transparent);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
