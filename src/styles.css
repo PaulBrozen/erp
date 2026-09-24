@@ -47,8 +47,8 @@
 
 :root {
   --radius: 0.625rem;
-  --ink: oklch(0.17 0.031 264);
-  --background: oklch(0.17 0.031 264);
+  --ink: oklch(0.13 0.03 264);
+  --background: oklch(0.13 0.03 264);
   --panel: oklch(0.22 0.032 264);
   --panel2: oklch(0.26 0.038 264);
   --line: oklch(0.32 0.042 263);
