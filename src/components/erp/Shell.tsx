@@ -76,7 +76,6 @@ export function Shell({
 }) {
   return (
     <div className="relative min-h-screen overflow-hidden bg-ink text-foreground">
-      <div className="glow pointer-events-none absolute inset-0" />
 
       <div className="relative flex h-screen">
         <aside className="frost flex w-60 shrink-0 flex-col border-r border-line/70">
